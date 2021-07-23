@@ -37,4 +37,17 @@ class DataLoader:
     print('Test directory: ', os.listdir(test_dir))
 
     return test_dir
+  
+  def read_conent(self, directory, content_path):
+    '''Returns output of the text files (only)
+       in the train/test directory
+        
+       directory: train/test directory or directory which contents the data(text files)
+       content_path: path to the content you want to display'''
+
+    self.directory = directory
+    self.content_path = content_path
+    sample_file = os.path.join(self.directory, self.content_path)
+    with open(sample_file) as f:
+      print(f.read())
         
