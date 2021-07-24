@@ -37,21 +37,3 @@ class DataPreprocess:
     return cleantext
 
 
-  
-  def vectorize_text(self, max_features,text, label):
-
-    self.max_features = max_features
-    self.text = text
-    self.label = label
-  
-    vectorize_layer = TextVectorization(   # for batch of strings
-    standardize=self.text_standardization,
-    max_tokens=max_features,
-    output_mode='binary'              #  binary mode to build bag of words model
-    )
-
-    vectorize_layer.adapt(self.text)
-
-    text = tf.expand_dims(self.text, -1)
-    
-    return vectorize_layer(text), self.label
