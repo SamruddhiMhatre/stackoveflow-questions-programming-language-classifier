@@ -107,9 +107,10 @@ class DataLoader:
     # raw validation data
     raw_val_ds = tf.keras.preprocessing.text_dataset_from_directory(
         self.train_dir,
-        self.seed,
-        self.batch_size,
-        self.validation_split,
+        labels='inferred',
+        seed=self.seed,
+        batch_size=self.batch_size,
+        validation_split=self.validation_split,
         subset = 'validation')
 
     print('Number of batches in validation set: ', tf.data.experimental.cardinality(raw_val_ds),'\n')
