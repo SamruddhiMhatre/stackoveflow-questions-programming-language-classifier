@@ -1,7 +1,7 @@
 import tensorflow as tf
 import os
 import pathlib
-
+from tensorflow.keras import preprocessing
 
 class DataLoader:
   """
