@@ -57,7 +57,7 @@ class DataLoader:
     return test_dir
 
   
-  def read_conent(self, directory, content_path):
+  def read_content(self, directory, content_path):
     '''Returns output of the text files (only)
        in the train/test directory
         
